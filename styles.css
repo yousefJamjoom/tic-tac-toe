@@ -1,0 +1,26 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    background-color: #fa0101;
+    grid-gap: 5px;
+    padding: 5px;
+    width: 350px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+  .grid-item {
+    background-color: rgb(3, 0, 0);
+    /* border: 1px solid rgba(255, 255, 255, 0.972); */
+    padding: 20px;
+    font-size: 30px;
+    color: rgb(253, 253, 253);
+    text-align: center;
+  }
