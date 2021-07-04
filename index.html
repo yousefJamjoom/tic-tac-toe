@@ -6,19 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/abd740b007.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <h1 class="test">Choose X or O</h1>
+    <div class="Div test">
+        <i class="fas fa-times fa-3" id="X"  style=" font-size: 50px;" onclick="iconOnClick(event)"></i>
+        <i class="far fa-circle fa-2" id="O" style=" font-size: 50px;" onclick="iconOnClick(event)"></i>
+    </div>
     <div class="grid-container" onclick="handleGridClick(event)">
-        <div class="grid-item"> &nbsp;</div>
-        <div class="grid-item"> &nbsp;</div>
-        <div class="grid-item"> &nbsp;</div>
-        <div class="grid-item"> &nbsp;</div>
-        <div class="grid-item"> &nbsp;</div>
-        <div class="grid-item"> &nbsp;</div>
-        <div class="grid-item"> &nbsp;</div>
-        <div class="grid-item"> &nbsp;</div>
-        <div class="grid-item"> &nbsp;</div>
+        <div class="grid-item" id="0"></div>
+        <div class="grid-item" id="1"></div>
+        <div class="grid-item" id="2"></div>
+        <div class="grid-item" id="3"></div>
+        <div class="grid-item" id="4"></div>
+        <div class="grid-item" id="5"></div>
+        <div class="grid-item" id="6"></div>
+        <div class="grid-item" id="7"></div>
+        <div class="grid-item" id="8"></div>
       </div>
+      <input id= "reset" type="reset" onclick="resetTheGame()">
+      
       <script src="tic-tac-toe.js"></script>
+        
 </body>
 </html>

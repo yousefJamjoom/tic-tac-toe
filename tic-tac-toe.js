@@ -1,17 +1,28 @@
 let input;
 let turn;
-let header= document.createElement('h1');
+let header = document.createElement('h1');
+let container = document.getElementsByClassName("grid-container")[0];
+let items = document.getElementsByClassName("test");
+let check = 0;
 
-document.addEventListener("DOMContentLoaded", function (event) {
-    inputLoop();
-});
+function iconOnClick(event) {
+    console.log(event);
+    
+    
+    for (item of items) {
+        item.style.visibility = "hidden";
+    }
 
-function inputLoop() {
-    do {
-        input = prompt("Choose either x or o to start: ");
-        console.log(input);
-        if (input === "x") { turn = 1; } else if (input === "o") { turn = 0; }
-    } while (input != "x" && input != "o");
+    if ( event.target.id == "X"){ 
+        turn = 1;
+    } 
+
+    else if(event.target.id == "O") { 
+        turn = 0;
+    }
+    
+    
+    container.style.visibility = "visible";
 }
 
 function handleGridClick(event) {
@@ -21,8 +32,13 @@ function handleGridClick(event) {
             if ((turn % 2) == 1) { item.textContent = "x"; }
             else { item.textContent = "o"; }
             turn += 1;
+            check +=1;
             checkWinCondition();
         }
+    }
+    if (check == 9){
+        declareWinner("Draw");
+        check =0;
     }
 }
 
@@ -59,14 +75,28 @@ function checkWhoWins(x){
 }
 
 function declareWinner(v){
-    header.innerText = v + ' has won';
+    if ( v == "Draw"){
+        header.innerText = v;
+    } else{
+        header.innerText = v + ' has won';
+    }
     document.body.appendChild(header);
+    container.style.visibility = "hidden";
     resetTheGame()
+    
 }
 
 function resetTheGame() {
     for (item of document.getElementsByClassName('grid-item')) {
         item.textContent = '';
     }
-    inputLoop();
+     
+    for (item of items) {
+        item.style.visibility = "visible";
+    }
+
+    container.style.visibility = "hidden";
+
+    check = 0;
+
 }
